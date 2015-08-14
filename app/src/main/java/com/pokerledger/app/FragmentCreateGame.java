@@ -12,21 +12,21 @@ import android.widget.Toast;
 /**
  * Created by Catface Meowmers on 8/16/15.
  */
-public class FragmentCreateLocation extends DialogFragment {
+public class FragmentCreateGame extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_create_location, null, false);
-        getDialog().setTitle("Add Location");
+        View view = inflater.inflate(R.layout.fragment_create_game, null, false);
+        getDialog().setTitle("Add Game");
 
-        Button addLocation = (Button) view.findViewById(R.id.add_location);
-        addLocation.setOnClickListener(new View.OnClickListener() {
+        Button addGame = (Button) view.findViewById(R.id.add_game);
+        addGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String locationName = ((EditText) getView().findViewById(R.id.location_name)).getText().toString();
+                String gameName = ((EditText) getView().findViewById(R.id.game_name)).getText().toString();
 
-                if (locationName.equals("")) {
-                    Toast.makeText(getActivity(), "You must enter a location name or press cancel.", Toast.LENGTH_SHORT).show();
+                if (gameName.equals("")) {
+                    Toast.makeText(getActivity(), "You must enter a game name or press cancel.", Toast.LENGTH_SHORT).show();
                 } else {
-                    ((ActivityBase) getActivity()).notifyCreateLocation(locationName);
+                    ((ActivityBase) getActivity()).notifyCreateGame(gameName);
                     dismiss();
                 }
             }

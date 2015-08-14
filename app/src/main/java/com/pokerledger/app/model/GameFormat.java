@@ -13,10 +13,15 @@ public class GameFormat extends BaseFormat {
     }
 
     public GameFormat(int id, String f, int bfId, String bf) {
+        this(id, f, bfId, bf, 0);
+    }
+
+    public GameFormat(int id, String f, int bfId, String bf, int filtered) {
         this.id = id;
         this.gameFormat = f;
         this.baseFormatId = bfId;
         this.baseFormat = bf;
+        this.filtered = filtered;
     }
 
     @Override

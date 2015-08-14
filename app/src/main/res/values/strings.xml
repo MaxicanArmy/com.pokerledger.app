@@ -27,7 +27,7 @@
     <string name="formats_prompt">Select Format</string>
 
     <string name="tourney_radio_text">Tournament</string>
-    <string name="cash_radio_text">Cash</string>
+    <string name="cash_radio_text">Cash Game</string>
 
     <string name="buy_in_hint">Buy In</string>
     <string name="cash_out_hint">Cash Out</string>
@@ -72,6 +72,11 @@
 
     <string name="create_location_hint">Location Name</string>
     <string name="create_location_button_hint">Add Location</string>
+    <string name="create_game_hint">Game Name</string>
+    <string name="create_game_button_hint">Add Game</string>
+    <string name="create_gameformat_hint">Game Format Name</string>
+    <string name="create_gameformat_button_hint">Add Game Format</string>
+    <string name="create_blinds_button_hint">Add Blinds</string>
 
     <string-array name="timeblocks_array">
         <item>Weekly</item>

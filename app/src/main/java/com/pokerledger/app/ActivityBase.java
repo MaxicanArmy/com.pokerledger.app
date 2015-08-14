@@ -85,9 +85,9 @@ public class ActivityBase extends Activity {
         new CreateGame().execute(new Game(0, value, 0));
     }
 
-    protected void notifyCreateGameFormat(String value) {
+    protected void notifyCreateGameFormat(String gameFormat, int bfId, String baseFormat) {
         //this method is necessary because i cant get fragments to call async tasks
-        new CreateLocation().execute(new Location(0, value, 0));
+        new CreateGameFormat().execute(new GameFormat(0, gameFormat, bfId, baseFormat));
     }
 
     protected void notifyCreateBlinds(int sb, int bb, int straddle, int bringIn, int ante, int perPoint) {
@@ -99,7 +99,6 @@ public class ActivityBase extends Activity {
         FragmentManager manager = getFragmentManager();
         FragmentCreateLocation fcl = new FragmentCreateLocation();
         fcl.show(manager, "CreateLocation");
-
         /*
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
@@ -130,6 +129,10 @@ public class ActivityBase extends Activity {
     }
 
     public void showCreateGameDialog(View v) {
+        FragmentManager manager = getFragmentManager();
+        FragmentCreateGame fcg = new FragmentCreateGame();
+        fcg.show(manager, "CreateGame");
+        /*
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
         alert.setTitle("Add Game");
@@ -155,13 +158,21 @@ public class ActivityBase extends Activity {
         AlertDialog dialog = alert.create();
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         dialog.show();
+        */
     }
 
     public void showCreateGameFormatDialog(View v) {
-
+        FragmentManager manager = getFragmentManager();
+        FragmentCreateGameFormat fcgf = new FragmentCreateGameFormat();
+        fcgf.show(manager, "CreateGameFormat");
     }
 
     public void showCreateBlindsDialog(View v) {
+        FragmentManager manager = getFragmentManager();
+        FragmentCreateBlinds fcb = new FragmentCreateBlinds();
+        fcb.show(manager, "CreateBlinds");
+
+        /*
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         LayoutInflater factory = LayoutInflater.from(this);
         final View blindEntryView = factory.inflate(R.layout.fragment_add_blinds, null);
@@ -226,6 +237,7 @@ public class ActivityBase extends Activity {
         AlertDialog dialog = alert.create();
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         dialog.show();
+        */
     }
 
     public class CreateLocation extends AsyncTask<Location, Void, Location> {

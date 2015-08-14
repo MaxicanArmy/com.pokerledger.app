@@ -3,7 +3,7 @@ package com.pokerledger.app.model;
 /**
  * Created by Catface Meowmers on 7/26/15.
  */
-public abstract class BaseFormat { //make abstract class that SessionFormat extends (implements?)
+public abstract class BaseFormat { //make abstract class that GameFormat extends
     int baseFormatId = 0;
     String baseFormat = "";
 
