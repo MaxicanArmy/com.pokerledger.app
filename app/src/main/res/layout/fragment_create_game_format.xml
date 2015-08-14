@@ -20,15 +20,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".50"
                 android:text="@string/cash_radio_text"
-                android:checked="true"
-                android:onClick="toggleRadio"/>
+                android:checked="true"/>
 
             <RadioButton android:id="@+id/radio_tourney"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".50"
-                android:text="@string/tourney_radio_text"
-                android:onClick="toggleRadio"/>
+                android:text="@string/tourney_radio_text"/>
         </RadioGroup>
     </LinearLayout>
 
@@ -42,7 +40,7 @@
             android:id="@+id/game_format_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_gameformat_hint"
+            android:hint="@string/create_game_format_hint"
             android:inputType="textCapWords" />
     </LinearLayout>
 
@@ -53,11 +51,11 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/add_gameformat"
+            android:id="@+id/create_game_format"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".50"
-            android:hint="@string/create_gameformat_button_hint" />
+            android:hint="@string/create_button_hint" />
 
         <Button
             android:id="@+id/cancel"

@@ -16,10 +16,10 @@ public class FragmentCreateLocation extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_location, null, false);
-        getDialog().setTitle("Add Location");
+        getDialog().setTitle("Create Location");
 
-        Button addLocation = (Button) view.findViewById(R.id.add_location);
-        addLocation.setOnClickListener(new View.OnClickListener() {
+        Button createLocation = (Button) view.findViewById(R.id.create_location);
+        createLocation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String locationName = ((EditText) getView().findViewById(R.id.location_name)).getText().toString();
 

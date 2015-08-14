@@ -16,10 +16,10 @@ public class FragmentCreateGame extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_game, null, false);
-        getDialog().setTitle("Add Game");
+        getDialog().setTitle("Create Game");
 
-        Button addGame = (Button) view.findViewById(R.id.add_game);
-        addGame.setOnClickListener(new View.OnClickListener() {
+        Button createGame = (Button) view.findViewById(R.id.create_game);
+        createGame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String gameName = ((EditText) getView().findViewById(R.id.game_name)).getText().toString();
 

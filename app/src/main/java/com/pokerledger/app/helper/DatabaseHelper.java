@@ -41,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_CASH = "cash";
     private static final String TABLE_BLINDS = "blinds";
     private static final String TABLE_TOURNAMENT = "tournament";
-    private static final String TABLE_USER_SETTINGS = "user_settings"; //put date_filter dates in to this table
+    //private static final String TABLE_USER_SETTINGS = "user_settings";
 
     //common column names
     private static final String KEY_SESSION_ID = "session_id";
@@ -94,6 +94,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //BASE FORMAT table - column names
     private static final String KEY_BASE_FORMAT_ID = "base_format_id";
 
+    /*
+    //USER SETTINGS table - column names
+    private static final String KEY_USER_SETTINGS_ID = "user_settings_id";
+    private static final String KEY_FILTER_START_DATE = "filter_start_date";
+    private static final String KEY_FILTER_START_TIME = "filter_start_time";
+    private static final String KEY_FILTER_END_DATE = "filter_end_date";
+    private static final String KEY_FILTER_END_TIME = "filter_end_time";
+    private static final String KEY_CURRENCY_CHAR = "currency_char";
+    private static final String KEY_DATE_FORMAT = "date_format";
+    private static final String KEY_TWELVE_HOUR_CLOCK = "twelve_hour_clock";
+    private static final String KEY_DEFAULT_LOCATION = "default_location";
+    private static final String KEY_DEFAULT_GAME = "default_game";
+    private static final String KEY_DEFAULT_GAME_FORMAT = "default_game_format";
+    private static final String KEY_DEFAULT_BLINDS = "default_blinds";
+    */
+
     //create statements for tables
 
     //SESSIONS
@@ -137,6 +153,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_BASE_FORMATS = "CREATE TABLE " + TABLE_BASE_FORMAT + " (" + KEY_BASE_FORMAT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + KEY_BASE_FORMAT + " VARCHAR(20));";
 
+    /*
+    //USER SETTINGS
+    private static final String CREATE_TABLE_USER_SETTINGS = "CREATE TABLE " + TABLE_USER_SETTINGS + "(" + KEY_USER_SETTINGS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            KEY_FILTER_START_DATE + " DATE, " + KEY_FILTER_START_TIME + " TIME, " + KEY_FILTER_END_DATE + " DATE, " + KEY_FILTER_END_TIME + " TIME, " +
+            KEY_CURRENCY_CHAR + " CHAR(1), " + KEY_DATE_FORMAT + " CHAR(10), " + KEY_TWELVE_HOUR_CLOCK + " INTEGER, " + KEY_DEFAULT_LOCATION + " INTEGER, " +
+            KEY_DEFAULT_GAME + " INTEGER, " + KEY_DEFAULT_GAME_FORMAT + " INTEGER, " + KEY_DEFAULT_BLINDS + " INTEGER);";
+            */
+
     //constructor
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -155,6 +179,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_BLINDS);
         db.execSQL(CREATE_TABLE_GAME_FORMATS);
         db.execSQL(CREATE_TABLE_BASE_FORMATS);
+        //db.execSQL(CREATE_TABLE_USER_SETTINGS);
 
         ContentValues values;
 
@@ -168,13 +193,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values = new ContentValues();
         values.put(KEY_GAME, "Pot Limit Omaha HiLo");
         db.insert(TABLE_GAME, null, values);
-/*
-        //populate filter table
-        values = new ContentValues();
-        values.put(KEY_START_DATE, "0000-00-00");
-        values.put(KEY_END_DATE, "0000-00-00");
-        db.insert(TABLE_DATE_FILTER, null, values);
-*/
 
         //populate base_formats table
         values = new ContentValues();
@@ -195,6 +213,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_BASE_FORMAT, 2);
         values.put(KEY_FILTERED, 0);
         db.insert(TABLE_GAME_FORMAT, null, values);
+
+        /*
+        //populate user_settings table
+        values = new ContentValues();
+        values.put(KEY_FILTER_START_DATE, "0000-00-00");
+        values.put(KEY_FILTER_START_TIME, "00:00");
+        values.put(KEY_FILTER_END_DATE, "0000-00-00");
+        values.put(KEY_FILTER_END_TIME, "00:00");
+        values.put(KEY_CURRENCY_CHAR, "$");
+        values.put(KEY_DATE_FORMAT, "YYYY-MM-DD");
+        values.put(KEY_TWELVE_HOUR_CLOCK, 0);
+        values.put(KEY_DEFAULT_LOCATION, 0);
+        values.put(KEY_DEFAULT_GAME, 0);
+        values.put(KEY_DEFAULT_GAME_FORMAT, 0);
+        values.put(KEY_DEFAULT_BLINDS, 0);
+        */
     }
 
     @Override

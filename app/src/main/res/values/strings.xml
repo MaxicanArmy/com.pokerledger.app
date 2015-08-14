@@ -71,12 +71,9 @@
     <string name="overview_hourly">Hourly Wage</string>
 
     <string name="create_location_hint">Location Name</string>
-    <string name="create_location_button_hint">Add Location</string>
     <string name="create_game_hint">Game Name</string>
-    <string name="create_game_button_hint">Add Game</string>
-    <string name="create_gameformat_hint">Game Format Name</string>
-    <string name="create_gameformat_button_hint">Add Game Format</string>
-    <string name="create_blinds_button_hint">Add Blinds</string>
+    <string name="create_game_format_hint">Game Format Name</string>
+    <string name="create_button_hint">Create</string>
 
     <string-array name="timeblocks_array">
         <item>Weekly</item>

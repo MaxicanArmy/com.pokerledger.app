@@ -18,10 +18,10 @@ public class FragmentCreateBlinds extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_blinds, null, false);
-        getDialog().setTitle("Add Blinds");
+        getDialog().setTitle("Create Blinds");
 
-        Button addBlinds = (Button) view.findViewById(R.id.add_blinds);
-        addBlinds.setOnClickListener(new View.OnClickListener() {
+        Button createBlinds = (Button) view.findViewById(R.id.create_blinds);
+        createBlinds.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String sbText = ((EditText) getView().findViewById(R.id.small_blind)).getText().toString();
                 String bbText = ((EditText) getView().getRootView().findViewById(R.id.big_blind)).getText().toString();

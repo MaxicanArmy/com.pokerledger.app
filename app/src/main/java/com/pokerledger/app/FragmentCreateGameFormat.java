@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 /**
@@ -17,11 +16,11 @@ import android.widget.Toast;
 public class FragmentCreateGameFormat extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_create_gameformat, null, false);
-        getDialog().setTitle("Add Game Format");
+        View view = inflater.inflate(R.layout.fragment_create_game_format, null, false);
+        getDialog().setTitle("Create Game Format");
 
-        Button addGameFormat = (Button) view.findViewById(R.id.add_gameformat);
-        addGameFormat.setOnClickListener(new View.OnClickListener() {
+        Button createGameFormat = (Button) view.findViewById(R.id.create_game_format);
+        createGameFormat.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int baseFormatId = 1;
                 String baseFormat = "Cash Game";
