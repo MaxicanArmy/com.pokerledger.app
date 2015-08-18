@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/add_session"
+        android:title="@string/action_add_session"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/history"
+        android:title="@string/action_view_history"
+        app:showAsAction="ifRoom" />
+    <!--
+
+    <item
+        android:id="@+id/actionMore"
+        android:icon="@drawable/more"
+        android:showAsAction="always"
+        android:title="@string/more">
+
+        <menu>
+
+            <item android:id="@+id/statistics"
+                android:icon="@drawable/ic_action_statistics"
+                android:title="@string/action_statistics"
+                android:showAsAction="ifRoom" />
+
+            <item android:id="@+id/filter"
+                android:icon="@drawable/ic_action_backup"
+                android:title="@string/action_filter"
+                android:showAsAction="ifRoom" />
+
+            <item android:id="@+id/backup"
+                android:icon="@drawable/ic_action_backup"
+                android:title="@string/action_backup_restore"
+                android:showAsAction="ifRoom" />
+        </menu>
+    </item>
+                <item android:id="@+id/sync"
+                    android:title="@string/action_sync"
+                    android:showAsAction="ifRoom" />
+                <item android:id="@+id/action_settings"
+                    android:title="@string/action_settings"
+                    android:showAsAction="ifRoom" />
+                    -->
+</menu>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/activity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/timeframe_wrapper"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Wrapper">
+
+        <Spinner
+            android:id="@+id/timeblocks"
+            android:layout_width="0dp"
+            android:layout_weight=".30"
+            android:layout_height="wrap_content"
+            android:textSize="10dp" />
+
+        <Spinner
+            android:id="@+id/timeframes"
+            android:layout_width="0dp"
+            android:layout_weight=".70"
+            android:layout_height="wrap_content"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/active_games_header"
+        android:text="@string/summary_title"
+        style="@style/header"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/overview_wrapper"
+        android:orientation="vertical"
+        style="@style/subheader">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/row1"
+            android:orientation="horizontal"
+            style="@style/row">
+
+            <TextView
+                android:id="@+id/profit_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/overview_profit" />
+
+            <TextView
+                android:id="@+id/profit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/row2"
+            android:orientation="horizontal"
+            style="@style/row">
+
+            <TextView
+                android:id="@+id/time_played_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/overview_time" />
+
+            <TextView
+                android:id="@+id/time_played"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/row3"
+            android:orientation="horizontal"
+            style="@style/row">
+
+            <TextView
+                android:id="@+id/hourly_wage_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/overview_hourly" />
+
+            <TextView
+                android:id="@+id/hourly_wage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/Wrapper"
+        android:paddingLeft="@dimen/standard_padding"
+        android:paddingRight="@dimen/standard_padding"
+        android:layout_below="@id/overview_wrapper">
+    </ListView>
+</LinearLayout>

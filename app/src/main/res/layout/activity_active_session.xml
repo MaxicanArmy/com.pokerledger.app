@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/buy_in_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <EditText
+                android:id="@+id/buy_in"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/buy_in_hint"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/location_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <Spinner
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:prompt="@string/location_prompt"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/new_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:hint="@string/create_new_hint"
+                android:onClick="showCreateLocationDialog" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/game_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <Spinner
+                android:id="@+id/game"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:prompt="@string/location_prompt"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/new_game"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:hint="@string/create_new_hint"
+                android:onClick="showCreateGameDialog" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/game_format_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <Spinner
+                android:id="@+id/game_formats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:prompt="@string/formats_prompt"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/new_game_format"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:hint="@string/create_new_hint"
+                android:onClick="showCreateGameFormatDialog" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cash_tournament_wrapper"
+            android:orientation="vertical"
+            style="@style/Wrapper">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cash_wrapper"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/blinds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".80"
+                    android:prompt="@string/blinds_prompt"
+                    android:textSize="10dp" />
+
+                <Button
+                    android:id="@+id/new_blind"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".20"
+                    android:hint="@string/create_new_hint"
+                    android:onClick="showCreateBlindsDialog" />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tournament_wrapper"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/entrants"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:hint="@string/entrants_hint"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/time_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <Button
+                android:id="@+id/start_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:hint="@string/start_date_hint"
+                android:onClick="showDatePickerDialog"/>
+
+            <Button
+                android:id="@+id/start_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:hint="@string/start_time_hint"
+                android:onClick="showTimePickerDialog" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/notes_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <EditText
+                android:id="@+id/note"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/notes_hint"
+                android:maxLength="300"
+                android:textColor="#000"
+                android:inputType="textCapSentences" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/save_wrapper"
+            android:orientation="horizontal"
+            style="@style/Wrapper">
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/save_session_hint"
+                android:onClick="saveActiveSession" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
